@@ -19,3 +19,9 @@ def partition(lst, fn):
         >>> partition(["hi", None, 6, "bye"], is_string)
         [['hi', 'bye'], [None, 6]]
     """
+    partition_list = []
+    true_items = [lst_item for lst_item in lst if fn(lst_item) == True]
+    false_items = [lst_item for lst_item in lst if fn(lst_item) == False]
+    partition_list.append(true_items)
+    partition_list.append(false_items)
+    return partition_list
