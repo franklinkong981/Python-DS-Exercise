@@ -27,5 +27,10 @@ def is_odd_string(word):
         >>> is_odd_string('amazing')
         True
     """
-
-    # Hint: you may find the ord() function useful here
+    character_position_sum = 0
+    for char in word:
+        if char.isupper():
+            character_position_sum += (ord(char) - ord('A') + 1)
+        else:
+            character_position_sum += (ord(char) - ord('a') + 1)
+    return character_position_sum % 2 != 0
