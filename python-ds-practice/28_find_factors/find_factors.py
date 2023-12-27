@@ -1,3 +1,4 @@
+import math
 def find_factors(num):
     """Find factors of num, in increasing order.
 
@@ -13,3 +14,8 @@ def find_factors(num):
     >>> find_factors(321421)
     [1, 293, 1097, 321421]
     """
+    factors = []
+    for possible_factor in range(1,num+1):
+        if num % possible_factor == 0:
+            factors.append(possible_factor)
+    return factors
