@@ -13,3 +13,9 @@ def find_the_duplicate(nums):
         >>> find_the_duplicate([2, 1, 3, 4]) is None
         True
     """
+    nums_already_found = []
+    for number in nums:
+        if number in nums_already_found:
+            return number
+        else:
+            nums_already_found.append(number)
